@@ -628,6 +628,87 @@ img {
   fill: currentColor;
 }
 
+.subscription {
+  margin-left: 93px;
+}
+
+.subscription > .text {
+  display: block;
+  margin-bottom: 20px;
+
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--primary-white-color);
+}
+
+.form-footer {
+  display: flex;
+  width: 570px;
+}
+
+.form-field {
+  width: 358px;
+  margin-right: 12px;
+
+  position: relative;
+}
+
+.form-field .form-input {
+  width: 100%;
+  height: 50px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 75px;
+  padding-right: 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background-color: transparent;
+
+  font-size: 16px;
+  line-height: 20px;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.form-label {
+  position: absolute;
+  top: 15px;
+  left: 16px;
+  font-size: 16px;
+  line-height: calc(20 / 16);
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.form-button {
+  width: 200px;
+  height: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+
+  font-weight: 700;
+  line-height: calc(30 / 16);
+  letter-spacing: 0.06em;
+
+  transition: color 250ms var(--cubic-bezier),
+    background-color 250ms var(--cubic-bezier),
+    border-color 250ms var(--cubic-bezier), box-shadow 250ms var(--cubic-bezier);
+}
+
+.form-button:hover,
+.form-button:focus {
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
 /* Унікальний контент сторінки портфоліо */
 .button-list {
   display: flex;
