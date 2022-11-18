@@ -314,10 +314,10 @@ img {
   left: 50%;
   width: 528px;
   min-height: 581px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
 
   transform: translate(-50%, -50%) scale(1);
 
@@ -330,13 +330,14 @@ img {
 }
 
 .button.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 30px;
   height: 30px;
-  margin-bottom: 2px;
-  margin-left: auto;
 
   border-radius: 50%;
   border-color: var(--button-close-border);
@@ -357,13 +358,11 @@ img {
 .modal .user-data {
   display: block;
   width: 448px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .user-data .text {
   display: block;
-  margin-bottom: 30px;
+  margin-bottom: 12px;
 
   text-align: center;
 
@@ -380,23 +379,17 @@ img {
   position: relative;
 }
 
-.form-modal .form-field:not(:last-child) {
-  margin-bottom: 28px;
-}
-
-.form-modal .form-field:last-child {
-  margin-bottom: 20px;
+.form-modal .form-field + .form-field {
+  margin-top: 10px;
 }
 
 .form-modal .form-label {
-  position: absolute;
-  top: -4px;
-  left: 0;
-  transform: translateY(-100%);
-
+  margin-bottom: 4px;
+  
   font-size: 12px;
   line-height: calc(14 / 12);
   letter-spacing: 0.01em;
+  text-align: left;
 }
 
 .form-modal .form-input,
@@ -416,8 +409,6 @@ img {
 
   color: var(--primary-title-color);
   transition: border-color 250ms var(--cubic-bezier);
-
-  cursor: pointer;
 }
 
 .form-modal .form-input {
@@ -468,6 +459,7 @@ img {
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
+  margin-top: 20px;
 }
 
 .form-modal .policy-label {
@@ -864,8 +856,6 @@ img {
 .form-footer .form-field {
   width: 358px;
   margin-right: 12px;
-
-  position: relative;
 }
 
 .form-footer .form-input {
@@ -887,8 +877,6 @@ img {
 
   transition: color 250ms var(--cubic-bezier),
     border-color 250ms var(--cubic-bezier);
-
-  cursor: pointer;
 }
 
 .form-footer .form-input::placeholder {
@@ -905,10 +893,8 @@ img {
 }
 
 .form-footer .form-label {
-  position: absolute;
-  top: -20px;
-  left: 0;
-  transform: translateY(-100%);
+  display: block;
+  margin-bottom: 20px;
 
   font-weight: 700;
   font-size: 14px;
