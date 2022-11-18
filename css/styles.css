@@ -306,7 +306,10 @@ img {
   left: 50%;
   width: 528px;
   min-height: 581px;
-  /* padding: 8px; */
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
 
   transform: translate(-50%, -50%) scale(1);
 
@@ -324,10 +327,8 @@ img {
   align-items: center;
   width: 30px;
   height: 30px;
-  margin-top: 8px;
   margin-bottom: 2px;
   margin-left: auto;
-  margin-right: 8px;
 
   border-radius: 50%;
   border-color: var(--button-close-border);
@@ -336,9 +337,10 @@ img {
 }
 
 .modal .user-data {
-  padding-bottom: 40px;
-  padding-right: 40px;
-  padding-left: 40px;
+  display: block;
+  width: 448px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .user-data .text {
@@ -352,10 +354,6 @@ img {
   letter-spacing: 0.03em;
 
   color: var(--primary-title-color);
-}
-
-.form-modal {
-  width: 448px;
 }
 
 .form-modal .form-field {
@@ -399,7 +397,35 @@ img {
   line-height: calc(14 / 12);
   letter-spacing: 0.01em;
 
-  color: var(--primary-black-color);
+  color: var(--primary-title-color);
+  transition: border-color 250ms var(--cubic-bezier);
+
+  cursor: pointer;
+}
+
+.form-modal .input-wrapper {
+  position: relative;
+}
+
+.form-modal .input-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+
+  fill: var(--primary-title-color);
+  transition: fill 250ms var(--cubic-bezier);
+}
+
+.form-modal .form-input:hover,
+.form-modal .form-input:focus {
+  border-color: var(--accent-color);
+  outline: transparent;
+}
+
+.form-modal .form-input:hover + .input-icon,
+.form-modal .form-input:focus + .input-icon {
+  fill: var(--accent-color);
 }
 
 .form-modal .textarea-input {
@@ -419,18 +445,27 @@ img {
   line-height: calc(14 / 12);
   letter-spacing: 0.01em;
 
-  color: var(--primary-black-color);
+  color: var(--primary-title-color);
+  transition: border-color 250ms var(--cubic-bezier);
+
+  cursor: pointer;
 }
 
 .textarea-input::placeholder {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.form-modal .policy-field {
-  display: block;
-  margin-bottom: 30px;
+.form-modal .textarea-input:hover,
+.form-modal .textarea-input:focus {
+  border-color: var(--accent-color);
+  outline: transparent;
+}
 
-  text-align: left;
+.form-modal .policy-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
 .form-modal .policy-label {
@@ -457,13 +492,45 @@ img {
   background-color: var(--accent-color);
 }
 
-.form-modal .form-button {
-  width: 200px;
+.policy-field .agree-icon {
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.policy-field .icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 15px;
+  margin-right: 7px;
+
+  background-color: transparent;
+  color: transparent;
+  border: 2px solid var(--primary-title-color);
+  border-radius: 4px;
+
+  transition: color 250ms var(--cubic-bezier),
+    background-color 250ms var(--cubic-bezier),
+    border-color 250ms var(--cubic-bezier);
+}
+
+.policy-field .policy-input:checked + .icon-wrapper {
+  border: none;
+  background-color: var(--accent-color);
+  color: var(--primary-white-color);
+}
+
+.form-button {
+  display: inline-flex;
+  min-width: 200px;
   height: 50px;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
+  justify-content: center;
+  align-items: center;
 
   font-weight: 700;
   line-height: calc(30 / 16);
@@ -479,8 +546,8 @@ img {
     border-color 250ms var(--cubic-bezier), box-shadow 250ms var(--cubic-bezier);
 }
 
-.form-modal .form-button:hover,
-.form-modal .form-button:focus {
+.form-button:hover,
+.form-button:focus {
   background-color: #188ce8;
   border-color: #188ce8;
 }
@@ -735,10 +802,10 @@ img {
 
 .join-in {
   margin-left: 70px;
+  padding-top: 12px;
 }
 
 .join-in .text {
-  padding-top: 12px;
   margin-bottom: 20px;
 
   font-weight: 700;
@@ -783,23 +850,14 @@ img {
 
 .subscription {
   margin-left: 93px;
-}
-
-.subscription .text {
-  display: block;
-  margin-bottom: 20px;
-
-  font-size: 14px;
-  line-height: calc(16 / 14);
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-
-  color: var(--primary-white-color);
+  padding-top: 12px;
 }
 
 .form-footer {
   display: flex;
+  align-items: flex-end;
   width: 570px;
+  height: 86px;
 }
 
 .form-footer .form-field {
@@ -814,7 +872,7 @@ img {
   height: 50px;
   padding-top: 15px;
   padding-bottom: 15px;
-  padding-left: 75px;
+  padding-left: 16px;
   padding-right: 16px;
 
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -822,44 +880,36 @@ img {
   background-color: transparent;
 
   font-size: 16px;
-  line-height: 20px;
+  line-height: calc(20 / 16);
 
   color: var(--secondary-text-color);
+
+  cursor: pointer;
 }
 
-.form-footer .form-label {
-  position: absolute;
-  top: 15px;
-  left: 16px;
+.form-footer .form-input::placeholder {
   font-size: 16px;
   line-height: calc(20 / 16);
 
   color: var(--secondary-text-color);
 }
 
-.form-footer .form-button {
-  width: 200px;
-  height: 50px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+.form-footer .form-label {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  transform: translateY(-100%);
 
   font-weight: 700;
-  line-height: calc(30 / 16);
-  letter-spacing: 0.06em;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  text-transform: uppercase;
 
-  transition: color 250ms var(--cubic-bezier),
-    background-color 250ms var(--cubic-bezier),
-    border-color 250ms var(--cubic-bezier), box-shadow 250ms var(--cubic-bezier);
+  color: var(--primary-white-color);
 }
 
-.form-footer .form-button:hover,
-.form-footer .form-button:focus {
-  color: var(--primary-white-color);
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+.form-footer .button-icon {
+  margin-left: 10px;
 }
 
 /* Унікальний контент сторінки портфоліо */
