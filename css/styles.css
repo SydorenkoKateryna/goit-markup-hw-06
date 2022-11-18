@@ -11,6 +11,7 @@
   --primary-black-color: #000000;
 
   --header-border: #ececec;
+  --hero-button-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   --card-border: #eeeeee;
   --card-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -276,6 +277,7 @@ img {
 
   color: var(--primary-white-color);
   background-color: var(--accent-color);
+  box-shadow: var(--hero-button-shadow);
 }
 
 .backdrop {
